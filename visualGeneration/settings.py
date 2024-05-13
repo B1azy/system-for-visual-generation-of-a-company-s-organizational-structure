@@ -69,6 +69,10 @@ TEMPLATES = [
     },
 ]
 
+STATICFILES_DIRS = [
+    BASE_DIR / 'frontend/static',
+]
+
 WSGI_APPLICATION = 'visualGeneration.wsgi.application'
 
 

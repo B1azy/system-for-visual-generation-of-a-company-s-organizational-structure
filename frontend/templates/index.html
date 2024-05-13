@@ -1,10 +1,70 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <title>Visual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 </head>
+
 <body>
-Test
+    <main>
+        <section class="main-window-section">
+            <h1 class="path-header">Путь:</h1>
+            <ul class="main-window">
+                <li class="lockation">
+                    <h2 class="location-header"><a href="#">Локация 1</a></h2>
+                    <ul class="subdivisions">
+                        <li class="subdivision"><a href="#">{{dop}}</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 2</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 3</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 4</a></li>
+                    </ul>
+                </li>
+                <li class="lockation">
+                    <h2 class="location-header"><a href="#">Локация 2</a></h2>
+                    <ul class="subdivisions">
+                        <li class="subdivision"><a href="#">Подразделение 1</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 2</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 3</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 4</a></li>
+                    </ul>
+                </li>
+                <li class="lockation">
+                    <h2 class="location-header"><a href="#">Локация 3</a></h2>
+                    <ul class="subdivisions">
+                        <li class="subdivision"><a href="#">Подразделение 1</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 2</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 3</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 4</a></li>
+                    </ul>
+                </li>
+                <li class="lockation">
+                    <h2 class="location-header"><a href="#">Локация 4</a></h2>
+                    <ul class="subdivisions">
+                        <li class="subdivision"><a href="#">Подразделение 1</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 2</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 3</a></li>
+                        <li class="subdivision"><a href="#">Подразделение 4</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <a class="back-link" href="#"><img src="img/Arrow.svg'" alt="Стрелка назад"></a>
+        </section>
+        <nav class="navigation">
+            <h1 class="navigation-header">Навигация</h1>
+            <ul class="navigation-list">
+                <li class="navigation-item"><a href="#">Локация</a></li>
+                <li class="navigation-item"><a href="#">Подразделение</a></li>
+                <li class="navigation-item"><a href="#">Отдел</a></li>
+                <li class="navigation-item"><a href="#">Группа</a></li>
+                <li class="navigation-item"><a href="#">Должность</a></li>
+                <li class="navigation-item"><a href="#">ФИО</a></li>
+            </ul>
+        </nav>
+    </main>
 </body>
 </html>
