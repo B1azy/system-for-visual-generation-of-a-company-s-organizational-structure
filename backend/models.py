@@ -4,20 +4,24 @@ class Location(models.Model):
     name = models.CharField(max_length=100)
 
 class SubDivision(models.Model):
-    name = models.CharField(max_length=100)
-    LocationID = models.ForeignKey(Location, null=False, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, null=True)
+    LocationID = models.ForeignKey(Location, null=False, on_delete=models.CASCADE, related_name="subdivisions")
 
 class Division(models.Model):
-    name = models.CharField(max_length=100)
-    SubDivisionID = models.ForeignKey(SubDivision, null=False, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, null=True)
+    SubDivisionID = models.ForeignKey(SubDivision, null=False, on_delete=models.CASCADE, related_name="divisions")
 
 class Group(models.Model):
-    name = models.CharField(max_length=100)
-    DivisionID = models.ForeignKey(Division, null=False, on_delete=models.CASCADE)
+    name = models.CharField(max_length=100, null=True)
+    DivisionID = models.ForeignKey(Division, null=False, on_delete=models.CASCADE, related_name="groups")
 
 class Person(models.Model):
+    LocationID = models.ForeignKey(Location, null=False, on_delete=models.CASCADE, related_name="persons")
+    SubDivisionID = models.ForeignKey(SubDivision, null=False, on_delete=models.CASCADE, related_name="persons")
+    DivisionID = models.ForeignKey(Division, null=False, on_delete=models.CASCADE, related_name="persons")
+    GroupID = models.ForeignKey(Group, null=False, on_delete=models.CASCADE, related_name="persons")
+    Number = models.CharField(max_length=10)
     name = models.CharField(max_length=100)
-    GroupID = models.ForeignKey(Group, null=False, on_delete=models.CASCADE)
     WorkType = models.CharField(max_length=100)
     Post = models.CharField(max_length=100)
 
@@ -31,5 +35,7 @@ class Persons(models.Model):
     Post = models.CharField(max_length=100, null=True)
     name = models.CharField(max_length=100, null=True)
     WorkType = models.CharField(max_length=100, null=True)
+
+    #corseheaders библиотека
 
 

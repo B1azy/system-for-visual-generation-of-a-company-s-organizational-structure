@@ -3,3 +3,4 @@ db.sqlite3
 export.py
 Structure.xlsx
 del.py
+zap.py
